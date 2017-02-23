@@ -1,20 +1,22 @@
 
 let express = require('express');
-
-// created the connect server object
 let app = express();
 
 // assigned a port to a constant
-//const port = 3000;
+const loaclport = 3000;
 
-// setup the event loop - listens on port 3000
-app.listen(()=>{
-//console.log(`Server listening at port: ${port}`);
-// mounted two routes on the server
-console.log(`Server Started`);
-})
+/**
+ * Get port from environment and store in Express.
+ */
+let port = process.env.PORT || loaclport;
+app.set('port', port);
 
-// hello route
+
+app.listen(port);
+console.log(`Server started at http://loaclhost:${port}`);
+
+
+// routing
 app.use('/hello', (req, res, next) => {
     res.send("Hello World")
 });
