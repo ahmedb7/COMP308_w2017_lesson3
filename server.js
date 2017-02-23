@@ -5,17 +5,18 @@ let express = require('express');
 let app = express();
 
 // assigned a port to a constant
-const port = 3000;
+//const port = 3000;
 
 // setup the event loop - listens on port 3000
-app.listen(port);
-console.log(`Server listening at port: ${port}`);
+app.listen(()=>{
+//console.log(`Server listening at port: ${port}`);
 // mounted two routes on the server
+console.log(`Server Started`);
+})
 
 // hello route
 app.use('/hello', (req, res, next) => {
-    res.setHeader('Content-Type', 'text/plain');
-    res.end("Hello World!");
+    res.send("Hello World")
 });
 
 // main route for the root of my website
