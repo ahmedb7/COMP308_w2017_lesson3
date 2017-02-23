@@ -16,12 +16,12 @@ console.log(`Server listening at port: ${port}`);
 app.use('/hello', (req, res, next) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end("Hello World!");
-  next();
 });
 
 // main route for the root of my website
 app.use('/', (req, res, next) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end("Welcome!");
-  next();
 });
+
+module.exports = app;
