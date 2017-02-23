@@ -1,9 +1,8 @@
-//our server
-// imported 3rd party module 'connect'
-let connect = require('connect');
+
+let express = require('express');
 
 // created the connect server object
-let app = connect();
+let app = express();
 
 // assigned a port to a constant
 const port = 3000;
